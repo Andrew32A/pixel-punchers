@@ -20,6 +20,5 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate() {
         // move character
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, false);
-        Debug.Log(horizontalMove);
     }
 }
