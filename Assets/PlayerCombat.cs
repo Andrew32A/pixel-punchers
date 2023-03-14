@@ -9,13 +9,13 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask enemyLayers;
 
     void Start() {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        // 0 === left click
+        // 0 === left click; might wanna change to KeyDown later for consistenency
         if (Input.GetMouseButtonDown(0)) {
             Attack();
         }
