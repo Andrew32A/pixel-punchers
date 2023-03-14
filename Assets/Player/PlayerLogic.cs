@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCombat : MonoBehaviour
+public class PlayerLogic : MonoBehaviour
 {
+    public CharacterController2D controller;
+    public float runSpeed = 40f;
+    float horizontalMove = 0f;
+    bool jump = false;
+
     public Transform attackHitbox;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
-
-    void Start() {
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -19,6 +20,20 @@ public class PlayerCombat : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) {
             Attack();
         }
+
+        // get user input (a, d, left arrow, right arrow)
+        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+
+        if (Input.GetButtonDown("Jump")) {
+            jump = true;
+        }
+    }
+
+    void FixedUpdate() {
+        // move character
+        // false is for crouching input
+        controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+        jump = false;
     }
 
     void Attack() {
