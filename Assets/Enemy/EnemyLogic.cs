@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class EnemyLogic : MonoBehaviour
 {
+    public int maxHeath = 100;
+    int currentHealth;
+
     public GameObject player;
     public bool flipSprite;
     public float enemySpeed;
 
-    // Update is called once per frame
+    void Start() {
+        currentHealth = maxHeath;
+    }
+
     void Update()
     {
         Vector3 scale = transform.localScale;
@@ -22,5 +28,23 @@ public class EnemyLogic : MonoBehaviour
         }
 
         transform.localScale = scale;
+    }
+
+    public void TakeDamage(int damage) {
+        currentHealth -= damage;
+
+        // TODO: play stagger animation
+
+        // check if enemy died
+        if (currentHealth <= 0) {
+            Die();
+        }
+    }
+
+    void Die() {
+        Debug.Log("Enemy Died!");
+        // TODO: play death animation
+
+        // disable enemy
     }
 }

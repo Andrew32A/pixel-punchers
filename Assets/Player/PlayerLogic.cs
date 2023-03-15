@@ -6,6 +6,7 @@ public class PlayerLogic : MonoBehaviour
 {
     public CharacterController2D controller;
     public float runSpeed = 40f;
+    public int attackDamage = 40;
     float horizontalMove = 0f;
     bool jump = false;
 
@@ -48,6 +49,7 @@ public class PlayerLogic : MonoBehaviour
         // damage enemies if in range of attack
         foreach(Collider2D enemy in hitEnemies) {
             Debug.Log(enemy.name + " was hit!");
+            enemy.GetComponent<EnemyLogic>().TakeDamage(attackDamage);
         }
     }
 
