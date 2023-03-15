@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Follow: {fileID: 870509062}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 300
+    OrthographicSize: 500
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -289,7 +289,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 417490424}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 538.1, y: 325.3, z: -10}
+  m_LocalPosition: {x: 459.99997, y: 136, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -833,7 +833,7 @@ SpriteRenderer:
   m_SortingLayerID: 295520585
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1984423263, guid: ec89e32e051fe457eaa13d39aa8f34a5, type: 3}
+  m_Sprite: {fileID: 916337370, guid: 5f38807ebc0a942978daf7293833c418, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -852,7 +852,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 870509059}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 538.1, y: 265.3, z: 0}
+  m_LocalPosition: {x: 460, y: 36, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -916,7 +916,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.45, y: 2}
+    oldSize: {x: 1.45, y: 2.65}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1078,8 +1078,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128547722}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.54203475, y: 10.566614, z: 0}
-  m_LocalScale: {x: 6000, y: 1080, z: 1.8586642}
+  m_LocalPosition: {x: 0.54203475, y: 399, z: 0}
+  m_LocalScale: {x: 6000, y: 3051.108, z: 1.8586642}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 399345136}
@@ -1306,7 +1306,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 300
+  orthographic size: 500
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1330,7 +1330,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1943214085}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 538.1, y: 325.3, z: -10}
+  m_LocalPosition: {x: 459.99997, y: 136, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
