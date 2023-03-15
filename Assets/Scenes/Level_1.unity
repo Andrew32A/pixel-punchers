@@ -916,7 +916,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.45, y: 2.65}
+    oldSize: {x: 1.45, y: 2.85}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -939,6 +939,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 870509060}
   runSpeed: 4000
+  attackDamage: 40
   attackHitbox: {fileID: 1850609575}
   attackRange: 100
   enemyLayers:
@@ -1228,6 +1229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 1248484842}
   runSpeed: 4000
+  attackDamage: 40
   attackHitbox: {fileID: 348650759}
   attackRange: 30
   enemyLayers:
@@ -1407,6 +1409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c323cdae5e2a4a68bbfa4f6060ab5c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHeath: 100
   player: {fileID: 870509059}
   flipSprite: 1
   enemySpeed: 150

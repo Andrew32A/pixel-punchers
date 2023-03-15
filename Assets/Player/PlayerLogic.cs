@@ -30,6 +30,8 @@ public class PlayerLogic : MonoBehaviour
         if (Input.GetButtonDown("Jump")) {
             jump = true;
         }
+
+        animator.SetFloat("MoveSpeed", Mathf.Abs(horizontalMove));
     }
 
     void FixedUpdate() {
