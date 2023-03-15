@@ -1331,6 +1331,7 @@ GameObject:
   - component: {fileID: 1248484839}
   - component: {fileID: 1248484838}
   - component: {fileID: 1248484837}
+  - component: {fileID: 1248484845}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Player
@@ -1511,7 +1512,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 916337370, guid: 5f38807ebc0a942978daf7293833c418, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.5539919, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1539,6 +1540,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1248484845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248484836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c323cdae5e2a4a68bbfa4f6060ab5c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 870509059}
+  flipSprite: 1
+  enemySpeed: 150
 --- !u!1 &1850609574
 GameObject:
   m_ObjectHideFlags: 0
