@@ -13,6 +13,8 @@ public class PlayerLogic : MonoBehaviour
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
 
+    public Animator animator;
+
     // Update is called once per frame
     void Update()
     {
@@ -37,7 +39,8 @@ public class PlayerLogic : MonoBehaviour
     }
 
     void Attack() {
-        // TODO: play attack animation
+        // play attack animation
+        animator.SetTrigger("Attack");
 
         // throw out attackHitbox to detect enemies in range of attack
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackHitbox.position, attackRange, enemyLayers);
