@@ -6,12 +6,15 @@ public class PlayerLogic : MonoBehaviour
 {
     public CharacterController2D controller;
     public float runSpeed = 40f;
+    public int attackDamage = 40;
     float horizontalMove = 0f;
     bool jump = false;
 
     public Transform attackHitbox;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
+
+    public Animator animator;
 
     // Update is called once per frame
     void Update()
@@ -27,6 +30,8 @@ public class PlayerLogic : MonoBehaviour
         if (Input.GetButtonDown("Jump")) {
             jump = true;
         }
+
+        animator.SetFloat("MoveSpeed", Mathf.Abs(horizontalMove));
     }
 
     void FixedUpdate() {
@@ -37,7 +42,8 @@ public class PlayerLogic : MonoBehaviour
     }
 
     void Attack() {
-        // TODO: play attack animation
+        // play attack animation
+        animator.SetTrigger("Attack");
 
         // throw out attackHitbox to detect enemies in range of attack
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackHitbox.position, attackRange, enemyLayers);
@@ -45,6 +51,7 @@ public class PlayerLogic : MonoBehaviour
         // damage enemies if in range of attack
         foreach(Collider2D enemy in hitEnemies) {
             Debug.Log(enemy.name + " was hit!");
+            enemy.GetComponent<EnemyLogic>().TakeDamage(attackDamage);
         }
     }
 
