@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3c363e063d1e94927b33d9466cf1d053
+guid: c4db7c00319bc4335816b64e796d93aa
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,17 +101,29 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player Sword Idle 48x48_0
+      name: Walk_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 8
-        width: 21
-        height: 29
+        x: 32
+        y: 46
+        width: 100
+        height: 75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 153db7926550f4c998c72e989d492f0d
-      internalID: -148949478
+      spriteID: 9cd60b56d20214150bfe28338cdcad0b
+      internalID: -760271456
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player Sword Idle 48x48_1
+      name: Walk_1
       rect:
         serializedVersion: 2
-        x: 62
-        y: 8
-        width: 20
-        height: 27
+        x: 165
+        y: 45
+        width: 100
+        height: 75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da0d0441248844b2aa0c8a453ab28ad1
-      internalID: -1957690638
+      spriteID: 565d067a3a794470dbb010b72da95ba1
+      internalID: 322875945
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player Sword Idle 48x48_2
+      name: Walk_2
       rect:
         serializedVersion: 2
-        x: 110
-        y: 8
-        width: 20
-        height: 26
+        x: 274
+        y: 44
+        width: 100
+        height: 75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 274d46255773c43b8a263a5ae66018f6
-      internalID: -859898552
+      spriteID: 0eb9dde85595c4d6096866ac43fd3a3e
+      internalID: -587132007
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player Sword Idle 48x48_3
+      name: Walk_3
       rect:
         serializedVersion: 2
-        x: 158
-        y: 8
-        width: 20
-        height: 26
+        x: 380
+        y: 46
+        width: 95
+        height: 75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df9dc8390c692427395eb9d2075d163d
-      internalID: 615637573
+      spriteID: 923a22928c19f4e259708fff687fddb4
+      internalID: -343187142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player Sword Idle 48x48_4
+      name: Walk_4
       rect:
         serializedVersion: 2
-        x: 206
-        y: 8
-        width: 20
-        height: 26
+        x: 30
+        y: 177
+        width: 100
+        height: 75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f539c82978ddb4a4da36ca28b3d035ce
-      internalID: 450979835
+      spriteID: 8d879e16af32d40bc9756c67680aaceb
+      internalID: -1884215736
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player Sword Idle 48x48_5
+      name: Walk_5
       rect:
         serializedVersion: 2
-        x: 254
-        y: 8
-        width: 20
-        height: 27
+        x: 159
+        y: 176
+        width: 100
+        height: 75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,20 +236,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63559946b2fe74442baa5299afd5f0de
-      internalID: -904077848
+      spriteID: 13480e5d541e44035b86136264b052f0
+      internalID: 1995388367
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player Sword Idle 48x48_6
+      name: Walk_6
       rect:
         serializedVersion: 2
-        x: 302
-        y: 8
-        width: 20
-        height: 29
+        x: 272
+        y: 173
+        width: 100
+        height: 75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,20 +257,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83475d0c7b50245fa9578de29b49be20
-      internalID: -625804669
+      spriteID: 6dca52cefb7c3401a96fdf7a53a557dc
+      internalID: 1386726718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player Sword Idle 48x48_7
+      name: Walk_7
       rect:
         serializedVersion: 2
-        x: 350
-        y: 8
-        width: 20
-        height: 30
+        x: 372
+        y: 168
+        width: 100
+        height: 75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,50 +278,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee55f42142bfe4846938addc50c3ea11
-      internalID: 397613391
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player Sword Idle 48x48_8
-      rect:
-        serializedVersion: 2
-        x: 398
-        y: 8
-        width: 20
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a873596c8082e4da392c4e246eacf04a
-      internalID: 810033231
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player Sword Idle 48x48_9
-      rect:
-        serializedVersion: 2
-        x: 446
-        y: 8
-        width: 20
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a59b8f8f011b4e938beff91ba13992c
-      internalID: -1009881655
+      spriteID: b62dd70cbd5314ad3afd98bce403fff4
+      internalID: -202542187
       vertices: []
       indices: 
       edges: []
@@ -325,16 +295,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player Sword Idle 48x48_0: -148949478
-      Player Sword Idle 48x48_1: -1957690638
-      Player Sword Idle 48x48_2: -859898552
-      Player Sword Idle 48x48_3: 615637573
-      Player Sword Idle 48x48_4: 450979835
-      Player Sword Idle 48x48_5: -904077848
-      Player Sword Idle 48x48_6: -625804669
-      Player Sword Idle 48x48_7: 397613391
-      Player Sword Idle 48x48_8: 810033231
-      Player Sword Idle 48x48_9: -1009881655
+      Walk_0: -760271456
+      Walk_1: 322875945
+      Walk_2: -587132007
+      Walk_3: -343187142
+      Walk_4: -1884215736
+      Walk_5: 1995388367
+      Walk_6: 1386726718
+      Walk_7: -202542187
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
