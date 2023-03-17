@@ -41,12 +41,13 @@ public class EnemyLogic : MonoBehaviour
         }
     }
 
-    void Die() {
+    private void Die() {
         Debug.Log("Enemy Died!");
         // TODO: play death animation
 
         // disable enemy
-        GetComponent<BoxCollider2D>().enabled = false;
-        this.enabled = false;
+        Destroy(gameObject, 0.0f);
+        // GetComponent<BoxCollider2D>().enabled = false;
+        // this.enabled = false;
     }
 }

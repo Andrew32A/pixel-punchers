@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerLogic : MonoBehaviour
 {
     public CharacterController2D controller;
+    public int maxHeath = 100;
+    int currentHealth;
+
     public float runSpeed = 40f;
     public int attackDamage = 40;
     float horizontalMove = 0f;
@@ -15,6 +18,10 @@ public class PlayerLogic : MonoBehaviour
     public LayerMask enemyLayers;
 
     public Animator animator;
+
+    void Start() {
+        currentHealth = maxHeath;
+    }
 
     // Update is called once per frame
     void Update()
