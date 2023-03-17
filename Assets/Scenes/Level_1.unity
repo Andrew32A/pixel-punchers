@@ -648,7 +648,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1248484836}
   cam: {fileID: 1943214087}
-  spawnInterval: 1
+  spawnInterval: 5
   xPos: 1200
   yPos: 200
 --- !u!4 &755241826
