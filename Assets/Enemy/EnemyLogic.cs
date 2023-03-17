@@ -46,7 +46,8 @@ public class EnemyLogic : MonoBehaviour
         // TODO: play death animation
 
         // disable enemy
-        GetComponent<BoxCollider2D>().enabled = false;
-        this.enabled = false;
+        Destroy(gameObject, 0.0f);
+        // GetComponent<BoxCollider2D>().enabled = false;
+        // this.enabled = false;
     }
 }
