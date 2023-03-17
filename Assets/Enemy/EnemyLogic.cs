@@ -41,7 +41,7 @@ public class EnemyLogic : MonoBehaviour
         }
     }
 
-    void Die() {
+    private void Die() {
         Debug.Log("Enemy Died!");
         // TODO: play death animation
 
