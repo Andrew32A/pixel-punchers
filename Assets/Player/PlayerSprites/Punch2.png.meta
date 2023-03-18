@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ec89e32e051fe457eaa13d39aa8f34a5
+guid: c91d893db81aa4f1da80b010d16add57
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,17 +101,29 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pink-boi_0
+      name: Punch2_0
       rect:
         serializedVersion: 2
-        x: 174
-        y: 417
-        width: 29
-        height: 40
+        x: 105
+        y: 63
+        width: 100
+        height: 75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 548dc139147d8462fb414b1e2d89fc2a
-      internalID: -1984423263
+      spriteID: 02fc322e1ffb14c40841fd1919bb1abc
+      internalID: -1259413656
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pink-boi_1
+      name: Punch2_1
       rect:
         serializedVersion: 2
-        x: 223
-        y: 416
-        width: 29
-        height: 36
+        x: 288
+        y: 59
+        width: 100
+        height: 75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,92 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d089bebcf52b94caaa17e9d6ccc97f92
-      internalID: -1904404600
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pink-boi_2
-      rect:
-        serializedVersion: 2
-        x: 265
-        y: 416
-        width: 29
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2b9d46cbc16ca4b51b9c87271f4172bd
-      internalID: 469602194
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pink-boi_3
-      rect:
-        serializedVersion: 2
-        x: 307
-        y: 416
-        width: 30
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f41df497d53ae493fb5784a5b0e3f201
-      internalID: 1411696942
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pink-boi_4
-      rect:
-        serializedVersion: 2
-        x: 349
-        y: 416
-        width: 31
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3563de5c1d6e847bf93cf1564b49765f
-      internalID: 101742537
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pink-boi_5
-      rect:
-        serializedVersion: 2
-        x: 392
-        y: 417
-        width: 30
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9715d0d4179ce4a21bfae44c31e1f041
-      internalID: -1921734302
+      spriteID: b7017e2e5423e40d7be086a268be2a56
+      internalID: -1565098169
       vertices: []
       indices: 
       edges: []
@@ -241,12 +169,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      pink-boi_0: -1984423263
-      pink-boi_1: -1904404600
-      pink-boi_2: 469602194
-      pink-boi_3: 1411696942
-      pink-boi_4: 101742537
-      pink-boi_5: -1921734302
+      Punch2_0: -1259413656
+      Punch2_1: -1565098169
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

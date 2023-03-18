@@ -120,19 +120,19 @@ TextureImporter:
       name: Punch1_0
       rect:
         serializedVersion: 2
-        x: 28
-        y: 42
-        width: 29
-        height: 55
+        x: 15
+        y: 61
+        width: 100
+        height: 75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ad81eaaf506674fb4b127cb03c2894b4
-      internalID: 1531696336
+      spriteID: 4df801967d698489abaeaa13305988e4
+      internalID: 1610423530
       vertices: []
       indices: 
       edges: []
@@ -141,19 +141,19 @@ TextureImporter:
       name: Punch1_1
       rect:
         serializedVersion: 2
-        x: 76
-        y: 42
-        width: 29
-        height: 55
+        x: 126
+        y: 59
+        width: 100
+        height: 75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60d3a2a57f0bb42179a8f13a9b265a28
-      internalID: -821811085
+      spriteID: d82b7c4179a154ff2ba5067ee16a481a
+      internalID: 709687194
       vertices: []
       indices: 
       edges: []
@@ -162,19 +162,19 @@ TextureImporter:
       name: Punch1_2
       rect:
         serializedVersion: 2
-        x: 126
-        y: 42
-        width: 44
-        height: 55
+        x: 243
+        y: 59
+        width: 100
+        height: 75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9adbaafaeef9a4efebc6d706e555f73d
-      internalID: -53884845
+      spriteID: fabe18a08c4ce43b192bb1f6daf91328
+      internalID: -1521531893
       vertices: []
       indices: 
       edges: []
@@ -183,19 +183,19 @@ TextureImporter:
       name: Punch1_3
       rect:
         serializedVersion: 2
-        x: 176
-        y: 43
-        width: 50
-        height: 55
+        x: 368
+        y: 63
+        width: 100
+        height: 75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 848eea3a5ddb8460ca8f1aa4093600d2
-      internalID: -204646431
+      spriteID: 9ea42b4aecf554af6a0baf78d4bcb341
+      internalID: 292183400
       vertices: []
       indices: 
       edges: []
@@ -211,10 +211,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Punch1_0: 1531696336
-      Punch1_1: -821811085
-      Punch1_2: -53884845
-      Punch1_3: -204646431
+      Punch1_0: 1610423530
+      Punch1_1: 709687194
+      Punch1_2: -1521531893
+      Punch1_3: 292183400
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

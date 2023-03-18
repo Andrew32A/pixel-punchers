@@ -633,7 +633,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &755241825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -743,6 +743,7 @@ GameObject:
   - component: {fileID: 870509065}
   - component: {fileID: 870509066}
   - component: {fileID: 870509068}
+  - component: {fileID: 870509069}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -819,12 +820,12 @@ SpriteRenderer:
   m_SortingLayerID: 295520585
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 916337370, guid: 5f38807ebc0a942978daf7293833c418, type: 3}
+  m_Sprite: {fileID: -1536761344, guid: 501e5c21dc3de4214bbff02c35d10d49, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5, y: 3.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -886,8 +887,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.45, y: 2.65}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 5, y: 3.75}
+    newSize: {x: 5, y: 3.75}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -938,6 +939,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &870509069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870509059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbeb50da512554ec58262538fcbe04e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 870509068}
+  numberClicks: 0
+  maxComboDelay: 0.5
 --- !u!1 &962314313
 GameObject:
   m_ObjectHideFlags: 3
@@ -1404,6 +1420,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 870509059}
+    - target: {fileID: 7892252511127843047, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
+      propertyPath: m_Size.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892252511127843047, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
+      propertyPath: m_Size.y
+      value: 3.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892252511127843047, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1536761344, guid: 501e5c21dc3de4214bbff02c35d10d49, type: 3}
+    - target: {fileID: 7892252511127843047, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7892252511127843048, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
       propertyPath: m_Name
       value: Enemy
