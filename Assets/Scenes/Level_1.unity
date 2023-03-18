@@ -953,7 +953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 870509068}
   numberClicks: 0
-  maxComboDelay: 10
+  maxComboDelay: 0.5
 --- !u!1 &962314313
 GameObject:
   m_ObjectHideFlags: 3

@@ -19,10 +19,14 @@ public class ComboSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (Time.time - lastClickTime > maxComboDelay) 
-        // {
-        //     numberClicks = 0;
-        // }
+        if (Time.time - lastClickTime > maxComboDelay) 
+        {
+            Debug.Log("numclicks reset");
+            numberClicks = 0;
+            animator.SetBool("attack1", false);
+            animator.SetBool("attack2", false);
+            animator.SetBool("attack3", false);
+        }
         if (Input.GetMouseButtonDown(0)) 
         {
             if (lastAttack)
@@ -57,14 +61,5 @@ public class ComboSystem : MonoBehaviour
             } 
 
         }
-    }
-    public void return1() 
-    {
-    }
-    public void return2() 
-    {
-    }
-    public void return3() 
-    {
     }
 }
