@@ -8,6 +8,7 @@ public class EnemyLogic : MonoBehaviour
     int currentHealth;
 
     public GameObject player;
+    public GameObject waveLogic;
     public LayerMask playerLayers;
     public bool flipSprite;
     public float enemySpeed;
@@ -117,6 +118,7 @@ public class EnemyLogic : MonoBehaviour
         Destroy(gameObject, 0.0f);
         // GetComponent<BoxCollider2D>().enabled = false;
         // this.enabled = false;
+        waveLogic.GetComponent<enemySpawner>().enemyCounter();
     }
 
     void OnDrawGizmosSelected() {
