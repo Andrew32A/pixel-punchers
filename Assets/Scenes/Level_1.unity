@@ -784,9 +784,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1248484836}
   cam: {fileID: 1943214087}
-  spawnInterval: 5
   xPos: 1200
   yPos: 200
+  wave: 0
 --- !u!4 &755241826
 Transform:
   m_ObjectHideFlags: 0
@@ -2010,6 +2010,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1248484838}
+    - target: {fileID: 7892252511127843041, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
+      propertyPath: waveLogic
+      value: 
+      objectReference: {fileID: 755241824}
     - target: {fileID: 7892252511127843041, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
       propertyPath: flipSprite
       value: 1
