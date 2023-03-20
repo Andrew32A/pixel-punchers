@@ -19,8 +19,10 @@ public class EnemyLogic : MonoBehaviour
     public Animator animator;
     public int numberClicks = 0;
     private float lastClickTime = 0;
-    public float maxComboDelay = 0.9f;
+    public float maxComboDelay = 2f;
     private bool lastAttack = false;
+    private float attackTimer = 0f;
+    private float attackDelay = 0.8f;
 
     void Start() {
         currentHealth = maxHeath;
@@ -48,49 +50,53 @@ public class EnemyLogic : MonoBehaviour
     }
 
     public void EnemyAttack() {
-        // throw out attackHitbox to detect player in range of attack
-        Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(enemyAttackHitbox.position, enemyAttackRange, playerLayers);
 
-        // damage enemies if in range of attack
-        foreach(Collider2D player in hitPlayer) {
-            Debug.Log(player.name + " was hit!");
-            player.GetComponent<PlayerLogic>().PlayerTakeDamage(enemyAttackDamage);
-        }
 
-        if (Time.time - lastClickTime > maxComboDelay) {
+            // Perform attack
+            Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(enemyAttackHitbox.position, enemyAttackRange, playerLayers);
+
+            foreach (Collider2D player in hitPlayer) {
+                Debug.Log(player.name + " was hit!");
+                player.GetComponent<PlayerLogic>().PlayerTakeDamage(enemyAttackDamage);
+            }
+
+            if (Time.time - lastClickTime > maxComboDelay) {
                 Debug.Log("numclicks reset");
                 numberClicks = 0;
                 animator.SetBool("attack1", false);
                 animator.SetBool("attack2", false);
                 animator.SetBool("attack3", false);
             }
-        if (true == true) {
-            if (lastAttack) {
-                numberClicks = 0;
-                animator.SetBool("attack1", false);
-                animator.SetBool("attack2", false);
-                animator.SetBool("attack3", false);
-                Debug.Log("Attack reset");
-                lastAttack = false;
-            }
-            numberClicks++;
-            lastClickTime = Time.time;
+                    // Check if enough time has passed since last attack
+        if (Time.time - attackTimer >= attackDelay) {
+            // Reset timer
+            attackTimer = Time.time;
+            if (true == true) {
+                if (lastAttack) {
+                    numberClicks = 0;
+                    animator.SetBool("attack1", false);
+                    animator.SetBool("attack2", false);
+                    animator.SetBool("attack3", false);
+                    Debug.Log("Attack reset");
+                    lastAttack = false;
+                }
+                numberClicks++;
+                lastClickTime = Time.time;
 
-            if (numberClicks == 1) {
-                animator.SetBool("attack1", true);
-                Debug.Log("Attack 1");
+                if (numberClicks == 1) {
+                    animator.SetBool("attack1", true);
+                    Debug.Log("Attack 1");
+                } else if (numberClicks == 2) {
+                    animator.SetBool("attack1", false);
+                    animator.SetBool("attack2", true);
+                    Debug.Log("Attack 2");
+                } else if (numberClicks == 3) {
+                    animator.SetBool("attack2", false);
+                    animator.SetBool("attack3", true);
+                    lastAttack = true;
+                    Debug.Log("Attack 3");
+                } 
             }
-            else if (numberClicks == 2) {
-                animator.SetBool("attack1", false);
-                animator.SetBool("attack2", true);
-                Debug.Log("Attack 2");
-            } 
-            else if (numberClicks == 3) {
-                animator.SetBool("attack2", false);
-                animator.SetBool("attack3", true);
-                lastAttack = true;
-                Debug.Log("Attack 3");
-            } 
         }
     }
 

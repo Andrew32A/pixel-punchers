@@ -2000,6 +2000,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: e2b19a9dacd57428091f6e67d393c2be, type: 2}
+    - target: {fileID: 7892252511127843050, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
+      propertyPath: attackRange
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
 --- !u!4 &7892252512028192013 stripped

@@ -32,9 +32,6 @@ public class PlayerLogic : MonoBehaviour
         // 0 === left click; might wanna change to KeyDown later for consistenency
         if (Input.GetMouseButtonDown(0)) {
             Attack();
-            // testing healthbar ui, delete when done!!
-            currentHealth -= 20;
-            healthBar.SetHealth(currentHealth);
         }
 
         // get user input (a, d, left arrow, right arrow)
@@ -67,10 +64,11 @@ public class PlayerLogic : MonoBehaviour
 
     public void PlayerTakeDamage(int damage) {
         currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
 
         // TODO: play stagger animation
 
-        // check if enemy died
+        // check if player died
         if (currentHealth <= 0) {
             PlayerDie();
         }
@@ -80,7 +78,7 @@ public class PlayerLogic : MonoBehaviour
         Debug.Log("Enemy Died!");
         // TODO: play death animation
 
-        // disable enemy
+        // disable player
         Destroy(gameObject, 0.0f);
         // GetComponent<BoxCollider2D>().enabled = false;
         // this.enabled = false;
