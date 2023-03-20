@@ -6,7 +6,6 @@ public class enemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
     public Camera cam;
-    // public float spawnInterval;
     public float xPos = 1200f;
     public float yPos = 100f;
 
@@ -32,7 +31,7 @@ public class enemySpawner : MonoBehaviour
         }
     }
 
-    public void enemyCounter() {
+    public void waveCheck() {
         enemyCount -= 1;
         nextWave();
     }

@@ -118,7 +118,7 @@ public class EnemyLogic : MonoBehaviour
         Destroy(gameObject, 0.0f);
         // GetComponent<BoxCollider2D>().enabled = false;
         // this.enabled = false;
-        waveLogic.GetComponent<enemySpawner>().enemyCounter();
+        waveLogic.GetComponent<enemySpawner>().waveCheck();
     }
 
     void OnDrawGizmosSelected() {
