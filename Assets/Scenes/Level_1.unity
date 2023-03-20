@@ -1887,11 +1887,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7892252511127843040, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 484
+      value: 474
       objectReference: {fileID: 0}
     - target: {fileID: 7892252511127843040, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -710
+      value: -797
       objectReference: {fileID: 0}
     - target: {fileID: 7892252511127843040, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1939,7 +1939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7892252511127843041, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
       propertyPath: enemyDistance
-      value: 300
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7892252511127843041, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
       propertyPath: enemyAttackRange
