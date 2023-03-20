@@ -21,8 +21,8 @@ public class EnemyLogic : MonoBehaviour
     private float lastClickTime = 0;
     public float maxComboDelay = 2f;
     private bool lastAttack = false;
-    private float attackTimer = 0f;
-    private float attackDelay = 0.8f;
+    public float attackTimer = 0f;
+    public float attackDelay = 0.8f;
 
     void Start() {
         currentHealth = maxHeath;
@@ -47,29 +47,28 @@ public class EnemyLogic : MonoBehaviour
         }
 
         transform.localScale = scale;
+
+        if (Time.time - lastClickTime > maxComboDelay - (maxComboDelay / 2)) {
+            Debug.Log("numclicks reset");
+            numberClicks = 0;
+            animator.SetBool("attack1", false);
+            animator.SetBool("attack2", false);
+            animator.SetBool("attack3", false);
+        }
     }
 
     public void EnemyAttack() {
+        // Perform attack
+        Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(enemyAttackHitbox.position, enemyAttackRange, playerLayers);
 
+        foreach (Collider2D player in hitPlayer) {
+            Debug.Log(player.name + " was hit!");
+            player.GetComponent<PlayerLogic>().PlayerTakeDamage(enemyAttackDamage);
+        }
 
-            // Perform attack
-            Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(enemyAttackHitbox.position, enemyAttackRange, playerLayers);
-
-            foreach (Collider2D player in hitPlayer) {
-                Debug.Log(player.name + " was hit!");
-                player.GetComponent<PlayerLogic>().PlayerTakeDamage(enemyAttackDamage);
-            }
-
-            if (Time.time - lastClickTime > maxComboDelay) {
-                Debug.Log("numclicks reset");
-                numberClicks = 0;
-                animator.SetBool("attack1", false);
-                animator.SetBool("attack2", false);
-                animator.SetBool("attack3", false);
-            }
-                    // Check if enough time has passed since last attack
+        // check if enough time has passed since last attack
         if (Time.time - attackTimer >= attackDelay) {
-            // Reset timer
+            // reset timer
             attackTimer = Time.time;
             if (true == true) {
                 if (lastAttack) {
