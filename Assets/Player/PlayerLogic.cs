@@ -19,8 +19,11 @@ public class PlayerLogic : MonoBehaviour
 
     public Animator animator;
 
+    public HealthBar healthBar;
+
     void Start() {
         currentHealth = maxHeath;
+        healthBar.SetMaxHeath(maxHeath);
     }
 
     // Update is called once per frame
@@ -29,6 +32,9 @@ public class PlayerLogic : MonoBehaviour
         // 0 === left click; might wanna change to KeyDown later for consistenency
         if (Input.GetMouseButtonDown(0)) {
             Attack();
+            // testing healthbar ui, delete when done!!
+            currentHealth -= 20;
+            healthBar.SetHealth(currentHealth);
         }
 
         // get user input (a, d, left arrow, right arrow)
