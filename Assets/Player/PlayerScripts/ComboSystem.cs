@@ -40,7 +40,7 @@ public class ComboSystem : MonoBehaviour
             }
             numberClicks++;
             lastClickTime = Time.time;
-            // numberClicks = Mathf.Clamp(numberClicks, 0, 3); 
+  
             if (numberClicks == 1) 
             {
                 animator.SetBool("attack1", true);
