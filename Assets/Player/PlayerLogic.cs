@@ -55,8 +55,6 @@ public class PlayerLogic : MonoBehaviour
     }
 
     void Attack() {
-        // play attack animation
-
         // throw out attackHitbox to detect enemies in range of attack
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackHitbox.position, attackRange, enemyLayers);
 
@@ -65,6 +63,27 @@ public class PlayerLogic : MonoBehaviour
             Debug.Log(enemy.name + " was hit!");
             enemy.GetComponent<EnemyLogic>().TakeDamage(attackDamage);
         }
+    }
+
+    public void PlayerTakeDamage(int damage) {
+        currentHealth -= damage;
+
+        // TODO: play stagger animation
+
+        // check if enemy died
+        if (currentHealth <= 0) {
+            PlayerDie();
+        }
+    }
+
+    private void PlayerDie() {
+        Debug.Log("Enemy Died!");
+        // TODO: play death animation
+
+        // disable enemy
+        Destroy(gameObject, 0.0f);
+        // GetComponent<BoxCollider2D>().enabled = false;
+        // this.enabled = false;
     }
 
     void OnDrawGizmosSelected() {

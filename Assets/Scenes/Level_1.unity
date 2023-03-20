@@ -1830,6 +1830,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &2146889522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2146889523}
+  m_Layer: 7
+  m_Name: AttackHitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2146889523
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146889522}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 644.1, y: 38.200005, z: 0}
+  m_LocalScale: {x: 100, y: 100, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7892252512028192012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1893,6 +1924,14 @@ PrefabInstance:
       propertyPath: enemyDistance
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 7892252511127843041, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
+      propertyPath: enemyAttackHitbox
+      value: 
+      objectReference: {fileID: 7892252512028192013}
+    - target: {fileID: 7892252511127843041, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
+      propertyPath: playerLayers.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 7892252511127843044, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
       value: 5
@@ -1929,5 +1968,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 7892252511127843049, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892252511127843049, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e2b19a9dacd57428091f6e67d393c2be, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
+--- !u!4 &7892252512028192013 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4007757039610638782, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
+  m_PrefabInstance: {fileID: 7892252512028192012}
+  m_PrefabAsset: {fileID: 0}
