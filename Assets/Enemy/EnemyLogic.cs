@@ -58,13 +58,12 @@ public class EnemyLogic : MonoBehaviour
     }
 
     public void EnemyAttack() {
-
         // check if enough time has passed since last attack
         if (Time.time - attackTimer >= attackDelay) {
-            // reset timer
+            // reset attack timer
             attackTimer = Time.time;
-
-            // Perform attack
+            Debug.Log("enemy attacked");
+            // check for player in attack hitbox
             Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(enemyAttackHitbox.position, enemyAttackRange, playerLayers);
 
             foreach (Collider2D player in hitPlayer) {
@@ -72,38 +71,36 @@ public class EnemyLogic : MonoBehaviour
                 player.GetComponent<PlayerLogic>().PlayerTakeDamage(enemyAttackDamage);
             }
 
-            if (true == true) {
-                if (lastAttack) {
-                    numberClicks = 0;
-                    animator.SetBool("attack1", false);
-                    animator.SetBool("attack2", false);
-                    animator.SetBool("attack3", false);
-                    Debug.Log("Attack reset");
-                    lastAttack = false;
-                }
-                numberClicks++;
-                lastClickTime = Time.time;
-
-                if (numberClicks == 1) {
-                    animator.SetBool("attack1", true);
-                    Debug.Log("Attack 1");
-                } else if (numberClicks == 2) {
-                    animator.SetBool("attack1", false);
-                    animator.SetBool("attack2", true);
-                    Debug.Log("Attack 2");
-                } else if (numberClicks == 3) {
-                    animator.SetBool("attack2", false);
-                    animator.SetBool("attack3", true);
-                    lastAttack = true;
-                    Debug.Log("Attack 3");
-                } 
+            // play attack animation
+            if (lastAttack) {
+                numberClicks = 0;
+                animator.SetBool("attack1", false);
+                animator.SetBool("attack2", false);
+                animator.SetBool("attack3", false);
+                Debug.Log("Enemy attack reset");
+                lastAttack = false;
             }
+            numberClicks++;
+            lastClickTime = Time.time;
+
+            if (numberClicks == 1) {
+                animator.SetBool("attack1", true);
+                Debug.Log("Enemy attack 1");
+            } else if (numberClicks == 2) {
+                animator.SetBool("attack1", false);
+                animator.SetBool("attack2", true);
+                Debug.Log("Enemy attack 2");
+            } else if (numberClicks == 3) {
+                animator.SetBool("attack2", false);
+                animator.SetBool("attack3", true);
+                lastAttack = true;
+                Debug.Log("Enemy attack 3");
+            } 
         }
     }
 
     public void TakeDamage(int damage) {
         currentHealth -= damage;
-
         // TODO: play stagger animation
 
         // check if enemy died

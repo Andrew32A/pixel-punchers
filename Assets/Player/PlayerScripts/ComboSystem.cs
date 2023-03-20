@@ -21,7 +21,6 @@ public class ComboSystem : MonoBehaviour
     {
         if (Time.time - lastClickTime > maxComboDelay) 
         {
-            Debug.Log("numclicks reset");
             numberClicks = 0;
             animator.SetBool("attack1", false);
             animator.SetBool("attack2", false);
@@ -35,7 +34,6 @@ public class ComboSystem : MonoBehaviour
                 animator.SetBool("attack1", false);
                 animator.SetBool("attack2", false);
                 animator.SetBool("attack3", false);
-                Debug.Log("Attack reset");
                 lastAttack = false;
             }
             numberClicks++;
@@ -44,20 +42,17 @@ public class ComboSystem : MonoBehaviour
             if (numberClicks == 1) 
             {
                 animator.SetBool("attack1", true);
-                Debug.Log("Attack 1");
             }
             else if (numberClicks == 2) 
             {
                 animator.SetBool("attack1", false);
                 animator.SetBool("attack2", true);
-                Debug.Log("Attack 2");
             } 
             else if (numberClicks == 3) 
             {
                 animator.SetBool("attack2", false);
                 animator.SetBool("attack3", true);
                 lastAttack = true;
-                Debug.Log("Attack 3");
             } 
 
         }
