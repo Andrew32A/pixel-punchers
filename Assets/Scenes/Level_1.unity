@@ -269,7 +269,6 @@ GameObject:
   m_Component:
   - component: {fileID: 223108031}
   - component: {fileID: 223108033}
-  - component: {fileID: 223108032}
   m_Layer: 0
   m_Name: Background (1)
   m_TagString: Untagged
@@ -292,20 +291,6 @@ Transform:
   m_Father: {fileID: 226266431}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &223108032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 223108030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e2080c04a8c949798803c888f3dadbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camera: {fileID: 1943214085}
-  parallaxEffect: 0
 --- !u!212 &223108033
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1409,7 +1394,6 @@ GameObject:
   - component: {fileID: 1523314816}
   - component: {fileID: 1523314815}
   - component: {fileID: 1523314814}
-  - component: {fileID: 1523314813}
   m_Layer: 0
   m_Name: Middle (1)
   m_TagString: Untagged
@@ -1432,20 +1416,6 @@ Transform:
   m_Father: {fileID: 666315924}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1523314813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1523314811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e2080c04a8c949798803c888f3dadbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camera: {fileID: 417490424}
-  parallaxEffect: 1
 --- !u!61 &1523314814
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1774,7 +1744,6 @@ GameObject:
   - component: {fileID: 1927065600}
   - component: {fileID: 1927065599}
   - component: {fileID: 1927065598}
-  - component: {fileID: 1927065597}
   m_Layer: 0
   m_Name: Middle (2)
   m_TagString: Untagged
@@ -1797,20 +1766,6 @@ Transform:
   m_Father: {fileID: 666315924}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1927065597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1927065595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e2080c04a8c949798803c888f3dadbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camera: {fileID: 417490424}
-  parallaxEffect: 1
 --- !u!61 &1927065598
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2072,7 +2027,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1954513254}
   - component: {fileID: 1954513256}
-  - component: {fileID: 1954513255}
   m_Layer: 0
   m_Name: Background (2)
   m_TagString: Untagged
@@ -2095,20 +2049,6 @@ Transform:
   m_Father: {fileID: 226266431}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1954513255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1954513253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e2080c04a8c949798803c888f3dadbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camera: {fileID: 417490424}
-  parallaxEffect: 0
 --- !u!212 &1954513256
 SpriteRenderer:
   m_ObjectHideFlags: 0
