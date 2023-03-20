@@ -1348,21 +1348,6 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 7892252511127843049, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
   m_PrefabInstance: {fileID: 7892252512028192012}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1248484846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1248484836}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12191183bb2bd413f8a8535ce3e88749, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 1248484838}
-  numberClicks: 0
-  maxComboDelay: 0.9
 --- !u!1 &1667785106
 GameObject:
   m_ObjectHideFlags: 0
@@ -1888,6 +1873,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4007757039610638782, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007757039610638782, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.71
+      objectReference: {fileID: 0}
     - target: {fileID: 7892252511127843040, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1949,6 +1942,14 @@ PrefabInstance:
       value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 7892252511127843041, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
+      propertyPath: enemyAttackRange
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892252511127843041, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
+      propertyPath: enemyAttackDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892252511127843041, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
       propertyPath: enemyAttackHitbox
       value: 
       objectReference: {fileID: 7892252512028192013}
@@ -2000,10 +2001,6 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: e2b19a9dacd57428091f6e67d393c2be, type: 2}
-    - target: {fileID: 7892252511127843050, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
-      propertyPath: attackRange
-      value: 100
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22804277bdbde4b7eb5eedf9613d61e6, type: 3}
 --- !u!4 &7892252512028192013 stripped

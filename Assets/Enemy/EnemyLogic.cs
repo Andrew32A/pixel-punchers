@@ -12,7 +12,7 @@ public class EnemyLogic : MonoBehaviour
     public bool flipSprite;
     public float enemySpeed;
     public int enemyDistance;
-    public int enemyAttackDamage = 40;
+    public int enemyAttackDamage = 5;
     public float enemyAttackRange = 0.5f;
     public Transform enemyAttackHitbox;
 
@@ -58,18 +58,20 @@ public class EnemyLogic : MonoBehaviour
     }
 
     public void EnemyAttack() {
-        // Perform attack
-        Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(enemyAttackHitbox.position, enemyAttackRange, playerLayers);
-
-        foreach (Collider2D player in hitPlayer) {
-            Debug.Log(player.name + " was hit!");
-            player.GetComponent<PlayerLogic>().PlayerTakeDamage(enemyAttackDamage);
-        }
 
         // check if enough time has passed since last attack
         if (Time.time - attackTimer >= attackDelay) {
             // reset timer
             attackTimer = Time.time;
+
+            // Perform attack
+            Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(enemyAttackHitbox.position, enemyAttackRange, playerLayers);
+
+            foreach (Collider2D player in hitPlayer) {
+                Debug.Log(player.name + " was hit!");
+                player.GetComponent<PlayerLogic>().PlayerTakeDamage(enemyAttackDamage);
+            }
+
             if (true == true) {
                 if (lastAttack) {
                     numberClicks = 0;
