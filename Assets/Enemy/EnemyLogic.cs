@@ -50,7 +50,6 @@ public class EnemyLogic : MonoBehaviour
         transform.localScale = scale;
 
         if (Time.time - lastClickTime > maxComboDelay - (maxComboDelay / 2)) {
-            Debug.Log("numclicks reset");
             numberClicks = 0;
             animator.SetBool("attack1", false);
             animator.SetBool("attack2", false);
@@ -63,12 +62,10 @@ public class EnemyLogic : MonoBehaviour
         if (Time.time - attackTimer >= attackDelay) {
             // reset attack timer
             attackTimer = Time.time;
-            Debug.Log("enemy attacked");
             // check for player in attack hitbox
             Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(enemyAttackHitbox.position, enemyAttackRange, playerLayers);
 
             foreach (Collider2D player in hitPlayer) {
-                Debug.Log(player.name + " was hit!");
                 player.GetComponent<PlayerLogic>().PlayerTakeDamage(enemyAttackDamage);
             }
 
@@ -78,7 +75,6 @@ public class EnemyLogic : MonoBehaviour
                 animator.SetBool("attack1", false);
                 animator.SetBool("attack2", false);
                 animator.SetBool("attack3", false);
-                Debug.Log("Enemy attack reset");
                 lastAttack = false;
             }
             numberClicks++;
@@ -86,16 +82,13 @@ public class EnemyLogic : MonoBehaviour
 
             if (numberClicks == 1) {
                 animator.SetBool("attack1", true);
-                Debug.Log("Enemy attack 1");
             } else if (numberClicks == 2) {
                 animator.SetBool("attack1", false);
                 animator.SetBool("attack2", true);
-                Debug.Log("Enemy attack 2");
             } else if (numberClicks == 3) {
                 animator.SetBool("attack2", false);
                 animator.SetBool("attack3", true);
                 lastAttack = true;
-                Debug.Log("Enemy attack 3");
             } 
         }
     }
