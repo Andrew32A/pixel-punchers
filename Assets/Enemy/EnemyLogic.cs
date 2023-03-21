@@ -111,7 +111,12 @@ public class EnemyLogic : MonoBehaviour
         Destroy(gameObject, 0.0f);
         // GetComponent<BoxCollider2D>().enabled = false;
         // this.enabled = false;
+
+        // check if next wave should spawn
         waveLogic.GetComponent<enemySpawner>().waveCheck();
+
+        // tell player that enemy died
+        player.GetComponent<PlayerLogic>().AddScore();
     }
 
     void OnDrawGizmosSelected() {

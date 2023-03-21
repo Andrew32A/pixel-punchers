@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerLogic : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class PlayerLogic : MonoBehaviour
     public Animator animator;
 
     public HealthBar healthBar;
+
+    public int playerScore = 0;
+    public TextMeshProUGUI scoreText;
 
     void Start() {
         currentHealth = maxHeath;
@@ -82,6 +86,11 @@ public class PlayerLogic : MonoBehaviour
         Destroy(gameObject, 0.0f);
         // GetComponent<BoxCollider2D>().enabled = false;
         // this.enabled = false;
+    }
+
+    public void AddScore() {
+        playerScore += 15;
+        scoreText.text = playerScore.ToString();
     }
 
     void OnDrawGizmosSelected() {
