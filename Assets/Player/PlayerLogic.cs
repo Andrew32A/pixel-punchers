@@ -90,7 +90,7 @@ public class PlayerLogic : MonoBehaviour
 
     public void AddScore() {
         playerScore += 15;
-        scoreText.text = playerScore.ToString();
+        scoreText.text = playerScore.ToString().PadLeft(9, '0');
     }
 
     void OnDrawGizmosSelected() {
