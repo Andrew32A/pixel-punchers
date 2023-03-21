@@ -442,7 +442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2080c04a8c949798803c888f3dadbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 417490424}
+  cam: {fileID: 417490424}
   parallaxEffect: 0.1
 --- !u!1 &399345132
 GameObject:
@@ -867,7 +867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2080c04a8c949798803c888f3dadbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 417490424}
+  cam: {fileID: 417490424}
   parallaxEffect: 1
 --- !u!1 &755241824
 GameObject:
