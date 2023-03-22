@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class enemySpawner : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class enemySpawner : MonoBehaviour
 
     public int wave = 0;
     private int enemyCount;
+
+    public TextMeshProUGUI waveText;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +31,7 @@ public class enemySpawner : MonoBehaviour
     private void nextWave() {
         if (enemyCount == 0) {
             spawnEnemy(enemyPrefab);
+            waveText.text = wave.ToString();
         }
     }
 

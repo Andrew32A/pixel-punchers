@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerLogic : MonoBehaviour
 {
@@ -16,10 +17,15 @@ public class PlayerLogic : MonoBehaviour
     public Transform attackHitbox;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
+    public float attackDelay = 0.4f;
+    public float attackTimer = 0f;
 
     public Animator animator;
 
     public HealthBar healthBar;
+
+    public int playerScore = 0;
+    public TextMeshProUGUI scoreText;
 
     void Start() {
         currentHealth = maxHeath;
@@ -52,13 +58,22 @@ public class PlayerLogic : MonoBehaviour
     }
 
     void Attack() {
-        // throw out attackHitbox to detect enemies in range of attack
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackHitbox.position, attackRange, enemyLayers);
+        if (Time.time - attackTimer >= attackDelay) {
+            attackTimer = Time.time;
 
-        // damage enemies if in range of attack
-        foreach(Collider2D enemy in hitEnemies) {
-            Debug.Log(enemy.name + " was hit!");
-            enemy.GetComponent<EnemyLogic>().TakeDamage(attackDamage);
+            // throw out attackHitbox to detect enemies in range of attack
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackHitbox.position, attackRange, enemyLayers);
+
+            // damage enemies if in range of attack
+            foreach(Collider2D enemy in hitEnemies) {
+                Debug.Log(enemy.name + " was hit!");
+                enemy.GetComponent<EnemyLogic>().TakeDamage(attackDamage);
+                Flash enemyFlash = enemy.GetComponent<Flash>();
+                if (enemyFlash != null)
+                {
+                    enemyFlash.Hit();
+                }
+            }
         }
     }
 
@@ -82,6 +97,11 @@ public class PlayerLogic : MonoBehaviour
         Destroy(gameObject, 0.0f);
         // GetComponent<BoxCollider2D>().enabled = false;
         // this.enabled = false;
+    }
+
+    public void AddScore() {
+        playerScore += 15;
+        scoreText.text = playerScore.ToString().PadLeft(9, '0');
     }
 
     void OnDrawGizmosSelected() {
