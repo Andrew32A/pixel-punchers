@@ -16,6 +16,7 @@ public class EnemyLogic : MonoBehaviour
     public int enemyAttackDamage = 5;
     public float enemyAttackRange = 0.5f;
     public Transform enemyAttackHitbox;
+    public AudioSource punchSound;
 
     public Animator animator;
     public int numberClicks = 0;
@@ -110,6 +111,9 @@ public class EnemyLogic : MonoBehaviour
         currentHealth -= damage;
         // TODO: play stagger animation
 
+        // play punch sound
+        punchSound.Play();
+        
         // delay attack
         isStaggered = true;
         StartCoroutine(ResetStaggeredState());
