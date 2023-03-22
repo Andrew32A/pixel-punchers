@@ -15,7 +15,7 @@ public class enemySpawner : MonoBehaviour
 
     public TextMeshProUGUI waveText;
 
-    // Start is called before the first frame update
+    // start is called before the first frame update
     void Start()
     {
         spawnEnemy(enemyPrefab);

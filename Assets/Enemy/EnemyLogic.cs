@@ -62,6 +62,7 @@ public class EnemyLogic : MonoBehaviour
         if (Time.time - attackTimer >= attackDelay) {
             // reset attack timer
             attackTimer = Time.time;
+            
             // check for player in attack hitbox
             Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(enemyAttackHitbox.position, enemyAttackRange, playerLayers);
 
@@ -110,12 +111,11 @@ public class EnemyLogic : MonoBehaviour
 
     private void Die() {
         Debug.Log("Enemy Died!");
-        // TODO: play death animation
+        // play death animation
+        animator.SetBool("death", true);
 
         // disable enemy
-        Destroy(gameObject, 0.0f);
-        // GetComponent<BoxCollider2D>().enabled = false;
-        // this.enabled = false;
+        this.enabled = false;
 
         // check if next wave should spawn
         waveLogic.GetComponent<enemySpawner>().waveCheck();
