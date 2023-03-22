@@ -67,6 +67,11 @@ public class EnemyLogic : MonoBehaviour
 
             foreach (Collider2D player in hitPlayer) {
                 player.GetComponent<PlayerLogic>().PlayerTakeDamage(enemyAttackDamage);
+                Flash playerFlash = player.GetComponent<Flash>();
+                if (playerFlash != null)
+                {
+                    playerFlash.Hit();
+                }
             }
 
             // play attack animation

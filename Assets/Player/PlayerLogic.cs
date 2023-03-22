@@ -63,6 +63,11 @@ public class PlayerLogic : MonoBehaviour
         foreach(Collider2D enemy in hitEnemies) {
             Debug.Log(enemy.name + " was hit!");
             enemy.GetComponent<EnemyLogic>().TakeDamage(attackDamage);
+            Flash enemyFlash = enemy.GetComponent<Flash>();
+            if (enemyFlash != null)
+            {
+                enemyFlash.Hit();
+            }
         }
     }
 
