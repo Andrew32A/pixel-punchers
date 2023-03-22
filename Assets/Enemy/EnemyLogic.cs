@@ -106,6 +106,8 @@ public class EnemyLogic : MonoBehaviour
         // check if enemy died
         if (currentHealth <= 0 && this.enabled == true) {
             Die();
+        } else if (currentHealth <= -160) {
+            Destroy(gameObject);
         }
     }
 
@@ -115,6 +117,7 @@ public class EnemyLogic : MonoBehaviour
         animator.SetBool("death", true);
 
         // disable enemy
+        // GetComponent<Collider2d>().enabled = false;
         this.enabled = false;
 
         // check if next wave should spawn
@@ -122,6 +125,9 @@ public class EnemyLogic : MonoBehaviour
 
         // tell player that enemy died
         player.GetComponent<PlayerLogic>().AddScore();
+
+        // destroy corpse after 5 seconds
+        Destroy(gameObject, 5f);
     }
 
     void OnDrawGizmosSelected() {
