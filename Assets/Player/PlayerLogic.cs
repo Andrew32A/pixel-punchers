@@ -91,12 +91,11 @@ public class PlayerLogic : MonoBehaviour
 
     private void PlayerDie() {
         Debug.Log("Enemy Died!");
-        // TODO: play death animation
+        // play death animation
+        animator.SetBool("death", true);
 
         // disable player
-        Destroy(gameObject, 0.0f);
-        // GetComponent<BoxCollider2D>().enabled = false;
-        // this.enabled = false;
+        this.enabled = false;
     }
 
     public void AddScore() {

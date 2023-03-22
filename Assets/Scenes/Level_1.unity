@@ -1705,7 +1705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 870509060}
-  maxHeath: 100
+  maxHeath: 10
   runSpeed: 4000
   attackDamage: 40
   attackHitbox: {fileID: 1850609575}
