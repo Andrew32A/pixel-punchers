@@ -16,6 +16,7 @@ public class EnemyLogic : MonoBehaviour
     public int enemyAttackDamage = 5;
     public float enemyAttackRange = 0.5f;
     public Transform enemyAttackHitbox;
+    public AudioSource punchSound;
 
     public Animator animator;
     public int numberClicks = 0;
@@ -24,6 +25,8 @@ public class EnemyLogic : MonoBehaviour
     private bool lastAttack = false;
     public float attackTimer = 0f;
     public float attackDelay = 0.8f;
+    public float staggerTime = 1f;
+    private bool isStaggered = false;
 
     void Start() {
         currentHealth = maxHeath;
@@ -58,11 +61,16 @@ public class EnemyLogic : MonoBehaviour
     }
 
     public void EnemyAttack() {
+        // check if enemy is currently staggered
+        if (isStaggered) {
+            return; // don't attack if enemy is staggered
+        }
+
         // check if enough time has passed since last attack
         if (Time.time - attackTimer >= attackDelay) {
             // reset attack timer
             attackTimer = Time.time;
-            
+
             // check for player in attack hitbox
             Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(enemyAttackHitbox.position, enemyAttackRange, playerLayers);
 
@@ -103,10 +111,24 @@ public class EnemyLogic : MonoBehaviour
         currentHealth -= damage;
         // TODO: play stagger animation
 
+        // play punch sound
+        punchSound.Play();
+        
+        // delay attack
+        isStaggered = true;
+        StartCoroutine(ResetStaggeredState());
+
         // check if enemy died
-        if (currentHealth <= 0) {
+        if (currentHealth <= 0 && this.enabled == true) {
             Die();
+        } else if (currentHealth <= -160) {
+            Destroy(gameObject);
         }
+    }
+
+    IEnumerator ResetStaggeredState() {
+        yield return new WaitForSeconds(staggerTime);
+        isStaggered = false;
     }
 
     private void Die() {
@@ -115,6 +137,7 @@ public class EnemyLogic : MonoBehaviour
         animator.SetBool("death", true);
 
         // disable enemy
+        // GetComponent<Collider2d>().enabled = false;
         this.enabled = false;
 
         // check if next wave should spawn
@@ -122,6 +145,9 @@ public class EnemyLogic : MonoBehaviour
 
         // tell player that enemy died
         player.GetComponent<PlayerLogic>().AddScore();
+
+        // destroy corpse after 5 seconds
+        Destroy(gameObject, 5f);
     }
 
     void OnDrawGizmosSelected() {

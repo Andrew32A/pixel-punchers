@@ -26,6 +26,8 @@ public class PlayerLogic : MonoBehaviour
     public int playerScore = 0;
     public TextMeshProUGUI scoreText;
 
+    public AudioSource punchSound;
+
     void Start() {
         currentHealth = maxHeath;
         healthBar.SetMaxHeath(maxHeath);
@@ -82,6 +84,9 @@ public class PlayerLogic : MonoBehaviour
 
         // TODO: play stagger animation
 
+        // play punch sound
+        punchSound.Play();
+        
         // check if player died
         if (currentHealth <= 0) {
             PlayerDie();
