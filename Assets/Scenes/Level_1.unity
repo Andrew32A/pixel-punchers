@@ -1119,8 +1119,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 666315923}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 126, y: 290, z: 0}
-  m_LocalScale: {x: 2681.478, y: 1169.16, z: 1.8586642}
+  m_LocalPosition: {x: 97.821, y: 573.4518, z: 0}
+  m_LocalScale: {x: 2681.478, y: 1479.0103, z: 1.8586642}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 399345136}
@@ -1247,7 +1247,7 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0, y: 0, z: 0, w: 2.02}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 5.12, y: 2.56}
     newSize: {x: 1, y: 1}
@@ -1271,7 +1271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 417490424}
-  parallaxEffect: 1
+  parallaxEffect: 0
 --- !u!1 &755241824
 GameObject:
   m_ObjectHideFlags: 0
@@ -3057,6 +3057,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1952749134}
   - component: {fileID: 1952749135}
+  - component: {fileID: 1952749136}
   m_Layer: 0
   m_Name: BushTree
   m_TagString: Untagged
@@ -3131,6 +3132,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1952749136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952749133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e2080c04a8c949798803c888f3dadbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 417490424}
+  parallaxEffect: 0.5
 --- !u!1 &1954513253
 GameObject:
   m_ObjectHideFlags: 0
@@ -3356,7 +3371,7 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.050448418, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0, y: 0, z: 0, w: 2.02}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 5.12, y: 2.56}
     newSize: {x: 1, y: 1}
