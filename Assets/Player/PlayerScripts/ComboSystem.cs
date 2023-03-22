@@ -9,6 +9,8 @@ public class ComboSystem : MonoBehaviour
     private float lastClickTime = 0;
     public float maxComboDelay = 0.9f;
     private bool lastAttack = false;
+    public float attackDelay = 0.4f;
+    public float attackTimer = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -26,35 +28,37 @@ public class ComboSystem : MonoBehaviour
             animator.SetBool("attack2", false);
             animator.SetBool("attack3", false);
         }
-        if (Input.GetMouseButtonDown(0)) 
-        {
-            if (lastAttack)
+        if (Time.time - attackTimer >= attackDelay && Input.GetMouseButtonDown(0)) {
+            attackTimer = Time.time;
+            if (true == true) 
             {
-                numberClicks = 0;
-                animator.SetBool("attack1", false);
-                animator.SetBool("attack2", false);
-                animator.SetBool("attack3", false);
-                lastAttack = false;
+                if (lastAttack)
+                {
+                    numberClicks = 0;
+                    animator.SetBool("attack1", false);
+                    animator.SetBool("attack2", false);
+                    animator.SetBool("attack3", false);
+                    lastAttack = false;
+                }
+                numberClicks++;
+                lastClickTime = Time.time;
+    
+                if (numberClicks == 1) 
+                {
+                    animator.SetBool("attack1", true);
+                }
+                else if (numberClicks == 2) 
+                {
+                    animator.SetBool("attack1", false);
+                    animator.SetBool("attack2", true);
+                } 
+                else if (numberClicks == 3) 
+                {
+                    animator.SetBool("attack2", false);
+                    animator.SetBool("attack3", true);
+                    lastAttack = true;
+                } 
             }
-            numberClicks++;
-            lastClickTime = Time.time;
-  
-            if (numberClicks == 1) 
-            {
-                animator.SetBool("attack1", true);
-            }
-            else if (numberClicks == 2) 
-            {
-                animator.SetBool("attack1", false);
-                animator.SetBool("attack2", true);
-            } 
-            else if (numberClicks == 3) 
-            {
-                animator.SetBool("attack2", false);
-                animator.SetBool("attack3", true);
-                lastAttack = true;
-            } 
-
         }
     }
 }

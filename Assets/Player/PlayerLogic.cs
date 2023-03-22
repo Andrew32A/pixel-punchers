@@ -17,6 +17,8 @@ public class PlayerLogic : MonoBehaviour
     public Transform attackHitbox;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
+    public float attackDelay = 0.4f;
+    public float attackTimer = 0f;
 
     public Animator animator;
 
@@ -56,17 +58,21 @@ public class PlayerLogic : MonoBehaviour
     }
 
     void Attack() {
-        // throw out attackHitbox to detect enemies in range of attack
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackHitbox.position, attackRange, enemyLayers);
+        if (Time.time - attackTimer >= attackDelay) {
+            attackTimer = Time.time;
 
-        // damage enemies if in range of attack
-        foreach(Collider2D enemy in hitEnemies) {
-            Debug.Log(enemy.name + " was hit!");
-            enemy.GetComponent<EnemyLogic>().TakeDamage(attackDamage);
-            Flash enemyFlash = enemy.GetComponent<Flash>();
-            if (enemyFlash != null)
-            {
-                enemyFlash.Hit();
+            // throw out attackHitbox to detect enemies in range of attack
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackHitbox.position, attackRange, enemyLayers);
+
+            // damage enemies if in range of attack
+            foreach(Collider2D enemy in hitEnemies) {
+                Debug.Log(enemy.name + " was hit!");
+                enemy.GetComponent<EnemyLogic>().TakeDamage(attackDamage);
+                Flash enemyFlash = enemy.GetComponent<Flash>();
+                if (enemyFlash != null)
+                {
+                    enemyFlash.Hit();
+                }
             }
         }
     }

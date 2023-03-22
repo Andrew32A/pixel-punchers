@@ -1713,6 +1713,8 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
+  attackDelay: 0.35
+  attackTimer: 0
   animator: {fileID: 870509068}
   healthBar: {fileID: 101837241}
   playerScore: 0
@@ -1753,6 +1755,8 @@ MonoBehaviour:
   animator: {fileID: 870509068}
   numberClicks: 0
   maxComboDelay: 0.5
+  attackDelay: 0.35
+  attackTimer: 0
 --- !u!114 &870509070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1766,7 +1770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashDuration: 0.1
-  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  flashColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &962314313
 GameObject:
   m_ObjectHideFlags: 3
