@@ -24,6 +24,8 @@ public class EnemyLogic : MonoBehaviour
     private bool lastAttack = false;
     public float attackTimer = 0f;
     public float attackDelay = 0.8f;
+    public float staggerTime = 1f;
+    private bool isStaggered = false;
 
     void Start() {
         currentHealth = maxHeath;
@@ -58,6 +60,11 @@ public class EnemyLogic : MonoBehaviour
     }
 
     public void EnemyAttack() {
+        // check if enemy is currently staggered
+        if (isStaggered) {
+            return; // don't attack if enemy is staggered
+        }
+
         // check if enough time has passed since last attack
         if (Time.time - attackTimer >= attackDelay) {
             // reset attack timer
@@ -103,12 +110,21 @@ public class EnemyLogic : MonoBehaviour
         currentHealth -= damage;
         // TODO: play stagger animation
 
+        // delay attack
+        isStaggered = true;
+        StartCoroutine(ResetStaggeredState());
+
         // check if enemy died
         if (currentHealth <= 0 && this.enabled == true) {
             Die();
         } else if (currentHealth <= -160) {
             Destroy(gameObject);
         }
+    }
+
+    IEnumerator ResetStaggeredState() {
+        yield return new WaitForSeconds(staggerTime);
+        isStaggered = false;
     }
 
     private void Die() {
