@@ -110,12 +110,12 @@ public class EnemyLogic : MonoBehaviour
 
     private void Die() {
         Debug.Log("Enemy Died!");
-        // TODO: play death animation
+        // play death animation
+        animator.SetBool("death", true);
 
         // disable enemy
-        Destroy(gameObject, 0.0f);
-        // GetComponent<BoxCollider2D>().enabled = false;
-        // this.enabled = false;
+        // Destroy(gameObject, 0.0f);
+        this.enabled = false;
 
         // check if next wave should spawn
         waveLogic.GetComponent<enemySpawner>().waveCheck();
