@@ -3,25 +3,25 @@ using System.Collections;
 
 public class Flash : MonoBehaviour
 {
-    // The duration of the flash effect
+    // duration of the flash effect
     public float flashDuration = 0.1f;
     
-    // The color to use when flashing
+    // color to use when flashing
     public Color flashColor = Color.white;
 
-    // The sprite renderer component for the enemy
+    // sprite renderer component for the enemy
     private SpriteRenderer spriteRenderer;
 
-    // Whether the enemy is currently flashing
+    // whether the enemy is currently flashing
     private bool isFlashing = false;
 
-    // Use this for initialization
+    // use this for initialization
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Called when the enemy is hit
+    // called when the enemy is hit
     public void Hit()
     {
         if (!isFlashing)
@@ -30,7 +30,7 @@ public class Flash : MonoBehaviour
         }
     }
 
-    // Coroutine to handle the flash effect
+    // coroutine to handle the flash effect
     IEnumerator FlashCoroutine()
     {
         isFlashing = true;

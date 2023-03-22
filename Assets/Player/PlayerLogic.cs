@@ -21,7 +21,6 @@ public class PlayerLogic : MonoBehaviour
     public float attackTimer = 0f;
 
     public Animator animator;
-
     public HealthBar healthBar;
 
     public int playerScore = 0;

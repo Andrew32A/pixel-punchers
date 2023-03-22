@@ -12,13 +12,6 @@ public class ComboSystem : MonoBehaviour
     public float attackDelay = 0.4f;
     public float attackTimer = 0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (Time.time - lastClickTime > maxComboDelay) 
