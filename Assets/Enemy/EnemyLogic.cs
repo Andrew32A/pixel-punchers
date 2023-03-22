@@ -62,7 +62,7 @@ public class EnemyLogic : MonoBehaviour
         if (Time.time - attackTimer >= attackDelay) {
             // reset attack timer
             attackTimer = Time.time;
-            
+
             // check for player in attack hitbox
             Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(enemyAttackHitbox.position, enemyAttackRange, playerLayers);
 
@@ -104,7 +104,7 @@ public class EnemyLogic : MonoBehaviour
         // TODO: play stagger animation
 
         // check if enemy died
-        if (currentHealth <= 0) {
+        if (currentHealth <= 0 && this.enabled == true) {
             Die();
         }
     }
