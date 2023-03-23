@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyLogic : MonoBehaviour
 {
-    public int maxHeath = 100;
-    int currentHealth;
+    public float maxHeath = 100;
+    public float currentHealth;
 
     public GameObject player;
     public GameObject waveLogic;

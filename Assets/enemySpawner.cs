@@ -24,13 +24,15 @@ public class enemySpawner : MonoBehaviour
     private void spawnEnemy(GameObject enemy) {
         // enemyCount += 2;
         wave += 1;
-        for (int i = 0; i < wave; i++)
-        {
-            xPos = Random.Range(1000f, 2000f);
+        // for (int i = 0; i < wave; i++)
+        // {
+            xPos = Random.Range(1100f, 2000f);
             enemyCount += 2;
-        GameObject newEnemy = Instantiate(enemy, new Vector3(cam.transform.position.x + xPos, cam.transform.position.y + yPos, 0), Quaternion.identity);
-        GameObject newEnemy2 = Instantiate(enemy, new Vector3(cam.transform.position.x + -xPos, cam.transform.position.y + yPos, 0), Quaternion.identity);
-        }
+            GameObject newEnemy = Instantiate(enemy, new Vector3(cam.transform.position.x + xPos, cam.transform.position.y + yPos, 0), Quaternion.identity);
+            increaseEnemyStats(newEnemy.GetComponent<EnemyLogic>());
+            GameObject newEnemy2 = Instantiate(enemy, new Vector3(cam.transform.position.x + -xPos, cam.transform.position.y + yPos, 0), Quaternion.identity);
+            increaseEnemyStats(newEnemy2.GetComponent<EnemyLogic>());
+        // }
     }
 
     private void nextWave() {
@@ -38,6 +40,14 @@ public class enemySpawner : MonoBehaviour
             spawnEnemy(enemyPrefab);
             waveText.text = wave.ToString();
         }
+    }
+
+    private void increaseEnemyStats(EnemyLogic enemy) {
+        // increase enemy's health by 10% per wave
+        enemy.maxHeath *= Mathf.Pow(1.1f, wave - 1);
+        
+        // darken enemy's color by 10% per wave
+        // enemy.GetComponent<SpriteRenderer>().color *= 0.9f; 
     }
 
     public void waveCheck() {
