@@ -86,11 +86,19 @@ public class PlayerLogic : MonoBehaviour
 
         // play punch sound
         punchSound.Play();
+        animator.SetBool("stun", true);
+        StartCoroutine(StunReset());
+
         
         // check if player died
         if (currentHealth <= 0) {
             PlayerDie();
         }
+    }
+
+    IEnumerator StunReset() {
+        yield return new WaitForSeconds(1f);
+        animator.SetBool("stun", false);
     }
 
     private void PlayerDie() {
