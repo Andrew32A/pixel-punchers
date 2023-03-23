@@ -7,7 +7,7 @@ public class enemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
     public Camera cam;
-    public float xPos = 1200f;
+    public float xPos;
     public float yPos = 100f;
 
     public int wave = 0;
@@ -22,10 +22,15 @@ public class enemySpawner : MonoBehaviour
     }
 
     private void spawnEnemy(GameObject enemy) {
-        enemyCount += 2;
+        // enemyCount += 2;
         wave += 1;
+        for (int i = 0; i < wave; i++)
+        {
+            xPos = Random.Range(1000f, 2000f);
+            enemyCount += 2;
         GameObject newEnemy = Instantiate(enemy, new Vector3(cam.transform.position.x + xPos, cam.transform.position.y + yPos, 0), Quaternion.identity);
         GameObject newEnemy2 = Instantiate(enemy, new Vector3(cam.transform.position.x + -xPos, cam.transform.position.y + yPos, 0), Quaternion.identity);
+        }
     }
 
     private void nextWave() {
