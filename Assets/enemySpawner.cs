@@ -23,36 +23,23 @@ public class enemySpawner : MonoBehaviour
 
     private void spawnEnemy(GameObject enemy) {
         wave += 1;
+        int numEnemies = 0;
+        float[] xPosValues = new float[] { 1200f, 1400f }; // waves 1-3
 
-        if (wave == 1) {
-            xPos = 1100f;
-            enemyCount += 1;
-            GameObject newEnemy = Instantiate(enemy, new Vector3(cam.transform.position.x + xPos, cam.transform.position.y + yPos, 0), Quaternion.identity);
-            increaseEnemyStats(newEnemy.GetComponent<EnemyLogic>());
-        } else if (wave < 5) {
-            xPos = 1200f;
-            enemyCount += 2;
-            GameObject newEnemy = Instantiate(enemy, new Vector3(cam.transform.position.x + xPos, cam.transform.position.y + yPos, 0), Quaternion.identity);
-            increaseEnemyStats(newEnemy.GetComponent<EnemyLogic>());
-            xPos = 1400f;
-            GameObject newEnemy2 = Instantiate(enemy, new Vector3(cam.transform.position.x + -xPos, cam.transform.position.y + yPos, 0), Quaternion.identity);
-            increaseEnemyStats(newEnemy2.GetComponent<EnemyLogic>());
+        if (wave > 3) {
+            numEnemies = wave - 2;
+            xPosValues = new float[] { 1100f, 3000f }; // waves 4+
         } else {
-            for (int i = 0; i < 10; i++){
-                xPos = Random.Range(1100f, 3000f);
-                enemyCount += 2;
-                GameObject newEnemy = Instantiate(enemy, new Vector3(cam.transform.position.x + xPos, cam.transform.position.y + yPos, 0), Quaternion.identity);
-                increaseEnemyStats(newEnemy.GetComponent<EnemyLogic>());
-                GameObject newEnemy2 = Instantiate(enemy, new Vector3(cam.transform.position.x + -xPos, cam.transform.position.y + yPos, 0), Quaternion.identity);
-                increaseEnemyStats(newEnemy2.GetComponent<EnemyLogic>());
-            }
+            numEnemies = wave == 1 ? 1 : 2;
         }
-    }
 
-    private void nextWave() {
-        if (enemyCount == 0) {
-            spawnEnemy(enemyPrefab);
-            waveText.text = wave.ToString();
+        for (int i = 0; i < numEnemies; i++) {
+            float xPos = Random.Range(xPosValues[0], xPosValues[xPosValues.Length - 1]);
+            float xSign = i % 2 == 0 ? 1f : -1f;
+            enemyCount += 1;
+
+            GameObject newEnemy = Instantiate(enemy, new Vector3(cam.transform.position.x + xPos * xSign, cam.transform.position.y + yPos, 0), Quaternion.identity);
+            increaseEnemyStats(newEnemy.GetComponent<EnemyLogic>());
         }
     }
 
@@ -60,12 +47,15 @@ public class enemySpawner : MonoBehaviour
         // increase enemy's health by 10% per wave
         enemy.maxHeath *= Mathf.Pow(1.1f, wave - 1);
         
-        // darken enemy's color by 10% per wave
-        // enemy.GetComponent<SpriteRenderer>().color *= 0.9f; 
+        // TODO: darken enemy's color by 10% per wave
+        // enemy.GetComponent<SpriteRenderer>().color *= 1.9f; 
     }
 
     public void waveCheck() {
         enemyCount -= 1;
-        nextWave();
+        if (enemyCount == 0) {
+            spawnEnemy(enemyPrefab);
+            waveText.text = wave.ToString();
+        }
     }
 }
