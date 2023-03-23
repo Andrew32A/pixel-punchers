@@ -22,17 +22,31 @@ public class enemySpawner : MonoBehaviour
     }
 
     private void spawnEnemy(GameObject enemy) {
-        // enemyCount += 2;
         wave += 1;
-        // for (int i = 0; i < wave; i++)
-        // {
-            xPos = Random.Range(1100f, 2000f);
+
+        if (wave == 1) {
+            xPos = 1100f;
+            enemyCount += 1;
+            GameObject newEnemy = Instantiate(enemy, new Vector3(cam.transform.position.x + xPos, cam.transform.position.y + yPos, 0), Quaternion.identity);
+            increaseEnemyStats(newEnemy.GetComponent<EnemyLogic>());
+        } else if (wave < 5) {
+            xPos = 1200f;
             enemyCount += 2;
             GameObject newEnemy = Instantiate(enemy, new Vector3(cam.transform.position.x + xPos, cam.transform.position.y + yPos, 0), Quaternion.identity);
             increaseEnemyStats(newEnemy.GetComponent<EnemyLogic>());
+            xPos = 1400f;
             GameObject newEnemy2 = Instantiate(enemy, new Vector3(cam.transform.position.x + -xPos, cam.transform.position.y + yPos, 0), Quaternion.identity);
             increaseEnemyStats(newEnemy2.GetComponent<EnemyLogic>());
-        // }
+        } else {
+            for (int i = 0; i < 10; i++){
+                xPos = Random.Range(1100f, 3000f);
+                enemyCount += 2;
+                GameObject newEnemy = Instantiate(enemy, new Vector3(cam.transform.position.x + xPos, cam.transform.position.y + yPos, 0), Quaternion.identity);
+                increaseEnemyStats(newEnemy.GetComponent<EnemyLogic>());
+                GameObject newEnemy2 = Instantiate(enemy, new Vector3(cam.transform.position.x + -xPos, cam.transform.position.y + yPos, 0), Quaternion.identity);
+                increaseEnemyStats(newEnemy2.GetComponent<EnemyLogic>());
+            }
+        }
     }
 
     private void nextWave() {
