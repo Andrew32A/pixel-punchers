@@ -110,7 +110,7 @@ public class EnemyLogic : MonoBehaviour
     public void TakeDamage(int damage) {
         currentHealth -= damage;
         // TODO: play stagger animation
-
+        animator.SetBool("stun", true);
         // play punch sound
         punchSound.Play();
         
@@ -129,6 +129,7 @@ public class EnemyLogic : MonoBehaviour
     IEnumerator ResetStaggeredState() {
         yield return new WaitForSeconds(staggerTime);
         isStaggered = false;
+        animator.SetBool("stun", false);
     }
 
     private void Die() {
