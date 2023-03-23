@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyLogic : MonoBehaviour
 {
-    public int maxHeath = 100;
-    int currentHealth;
+    public float maxHeath = 100;
+    public float currentHealth;
 
     public GameObject player;
     public GameObject waveLogic;
@@ -36,21 +36,23 @@ public class EnemyLogic : MonoBehaviour
     {
         Vector3 scale = transform.localScale;
 
-        if (player.transform.position.x > transform.position.x + enemyDistance) {
-            transform.Translate(enemySpeed * Time.deltaTime, 0, 0);
-        } else if (player.transform.position.x < transform.position.x - enemyDistance){
-            transform.Translate(enemySpeed * Time.deltaTime * -1, 0, 0);
-        } else {
-            EnemyAttack();
-        }
+        if (isStaggered == false) {
+            if (player.transform.position.x > transform.position.x + enemyDistance) {
+                transform.Translate(enemySpeed * Time.deltaTime, 0, 0);
+            } else if (player.transform.position.x < transform.position.x - enemyDistance){
+                transform.Translate(enemySpeed * Time.deltaTime * -1, 0, 0);
+            } else {
+                EnemyAttack();
+            }
 
-        if (player.transform.position.x > transform.position.x) {
-            scale.x = Mathf.Abs(scale.x) * -1 * (flipSprite ? -1 : 1);
-        } else {
-            scale.x = Mathf.Abs(scale.x) * (flipSprite ? -1 : 1);
-        }
+            if (player.transform.position.x > transform.position.x) {
+                scale.x = Mathf.Abs(scale.x) * -1 * (flipSprite ? -1 : 1);
+            } else {
+                scale.x = Mathf.Abs(scale.x) * (flipSprite ? -1 : 1);
+            }
 
-        transform.localScale = scale;
+            transform.localScale = scale;
+        }
 
         if (Time.time - lastClickTime > maxComboDelay - (maxComboDelay / 2)) {
             numberClicks = 0;
@@ -67,7 +69,7 @@ public class EnemyLogic : MonoBehaviour
         }
 
         // check if enough time has passed since last attack
-        if (Time.time - attackTimer >= attackDelay) {
+        else if (Time.time - attackTimer >= attackDelay) {
             // reset attack timer
             attackTimer = Time.time;
 
