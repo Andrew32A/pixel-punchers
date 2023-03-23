@@ -46,6 +46,9 @@ public class enemySpawner : MonoBehaviour
     private void increaseEnemyStats(EnemyLogic enemy) {
         // increase enemy's health by 10% per wave
         enemy.maxHeath *= Mathf.Pow(1.1f, wave - 1);
+
+        // increase enemy's speed
+        enemy.enemySpeed *= Mathf.Pow(1.1f, wave - 1);
         
         // TODO: darken enemy's color by 10% per wave
         // enemy.GetComponent<SpriteRenderer>().color *= 1.9f; 
