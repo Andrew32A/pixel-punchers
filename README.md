@@ -1,4 +1,4 @@
-<img src="https://github.com/Andrew32A/pixel_punchers/blob/main/Images/title.png" align="center">
+<img src="https://github.com/Andrew32A/pixel-punchers/blob/main/Images/title.png" align="center">
 
 <h2 align="center"><a href="https://andrew32a.github.io/pixel-punchers-livetest/">Click here to try it out!</a></h3>
 
