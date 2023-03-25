@@ -13,6 +13,7 @@ Feel free to demo our game with the link above that leads to a WebGL build hoste
 
 - A and D/Left and Right arrow keys: Movement
 - Left click: Attack
+- Spacebar: Jump
 
 # Credit
 The game was developed by Andrew (Andrew32A), with assistance from Brian (Babaganouche622) for sprites and pair programming. We would also like to thank the open-source community for providing valuable resources and inspiration for the game.
