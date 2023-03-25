@@ -8,6 +8,9 @@ In just a mere 2 weeks, we learned how to navigate Unity, write in C#, and creat
 
 Pixel Punchers is a 2D side-scrolling action game where the player takes on the role of a hero fighting against hordes of enemies in order to save the world from destruction. The game is heavily inspired by classic side-scrolling action games like Streets of Rage, which was released in the early 1990s and went on to become a cult classic. Streets of Rage has since spawned several sequels and spinoffs, including a recent release that sold over 2.5 million copies.
 
+<img src="https://github.com/Andrew32A/pixel-punchers/blob/main/Images/unity.png" align="center">
+<img src="https://github.com/Andrew32A/pixel-punchers/blob/main/Images/game.png" align="center">
+
 # How to play
 Feel free to demo our game with the link above that leads to a WebGL build hosted on GitHub Pages!
 
