@@ -15,7 +15,7 @@ Pixel Punchers is a 2D side-scrolling action game where the player takes on the 
 # How to play
 Feel free to demo our game with the link above that leads to a WebGL build hosted on GitHub Pages!
 
-- A and D/Left and Right arrow keys: Movement
+- A and D/Left and Right arrow keys: Horizontal movement
 - Left click: Attack
 - Spacebar: Jump
 
